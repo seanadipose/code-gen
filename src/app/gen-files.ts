@@ -1,4 +1,4 @@
-import * as Chance from "chance";
+import * as Chance from 'chance';
 
 export class Helpers {
   static genExt = (chance: Chance.Chance): string => {
@@ -11,22 +11,12 @@ export class Helpers {
     return num;
   };
 
-  *generator(int: number): Iterable<any> {
-    // const reset = yield current;
-    const chance = new Chance();
-    const name = chance.name();
-    yield 1;
-    yield* [2, 3];
-  }
-
-  constructor() {
-    this.generator(3);
-  }
+  constructor() {}
 }
 
 const Helper = new Helpers();
 export default Helper;
-export function* generatorX(num: number, fn: () => any): Iterable<any> {
+export function* generatorData(num: number, fn: () => any): Iterable<any> {
   let index = 0;
   while (index < num) yield fn();
 }
